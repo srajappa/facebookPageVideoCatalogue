@@ -70,7 +70,7 @@ $(window).load(function(){
 
 
 
-                FB.api('/8245623462/videos?fields=title,description,embeddable,embed_html',
+                FB.api('/8245623462/videos',
                 function(response) {
                     //user_email = response.email; //get user email
               // you can store this data into your database
