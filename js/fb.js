@@ -1,4 +1,8 @@
 
+$("#myBtn").click(function(){
+    $("#myModal").modal();
+});
+
   // This is called with the results from from FB.getLoginStatus().
   function statusChangeCallback(response) {
     console.log('statusChangeCallback');
@@ -88,8 +92,3 @@
 
     });
   }
-
-
-  $("#myBtn").click(function(){
-      $("#myModal").modal();
-  });
