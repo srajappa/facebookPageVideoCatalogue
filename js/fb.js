@@ -66,7 +66,7 @@ $(window).load(function(){
                 //console.log(response); // dump complete info
                 access_token = response.authResponse.accessToken; //get access token
                 user_id = response.authResponse.userID; //get FB UID
-                alert(response);
+                console.log(JSON.stringify(response));
                 $('#basicModal').modal('hide');
 
 
