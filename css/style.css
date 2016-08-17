@@ -1,6 +1,7 @@
 @import 'https://fonts.googleapis.com/css?family=Maven+Pro|Varela+Round';
-h2 {
+h2,h4 {
   text-align: center;
+  font-family: 'Maven Pro', sans-serif;
 }
 
 .p {

@@ -21,7 +21,7 @@ $(window).load(function(){
                 //console.log(response); // dump complete info
                 access_token = response.authResponse.accessToken; //get access token
                 user_id = response.authResponse.userID; //get FB UID
-
+                console.log(access_token);
                 FB.api('/me', function(response) {
                     user_email = response.email; //get user email
               // you can store this data into your database
