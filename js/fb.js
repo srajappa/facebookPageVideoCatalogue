@@ -76,10 +76,11 @@ $(window).load(function(){
               // you can store this data into your database
                   if (response && !response.error) {
                     /* handle the result */
-                    //console.log(JSON.stringify(response));
+                    console.log("HEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
+                    console.log(JSON.stringify(response));
 
                     alert("HI");
-                    console.log(response.authResponse.accessToken);
+                    //console.log(response.authResponse.accessToken);
                   }
                 });
 
