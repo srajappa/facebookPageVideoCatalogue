@@ -81,6 +81,8 @@ $(window).load(function(){
                     $('#basicModal').modal('hide');
                     alert("HI");
                     //console.log(response.authResponse.accessToken);
+
+                    console.log(response.data[0].description +" here is one data");
                   }
                 });
 
