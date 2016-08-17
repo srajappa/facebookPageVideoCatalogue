@@ -12,7 +12,7 @@
       testAPI();
       //alert(response.authResponse.accessToken);
       //$('#myModal').close();
-      findValueOfNBA();
+      //findValueOfNBA();
       //window.location = 'https://srajappa.github.io/whence.html';
     } else if (response.status === 'not_authorized') {
       // The person is logged into Facebook, but not your app.
@@ -90,12 +90,12 @@
     });
   }
 
-  function findValueOfNBA(){
-    console.log('GOING FOR NBA');
-    FB.api('/8245623462', function(response)){
-      console.log(response);
-    }
-  }
+  // function findValueOfNBA(){
+  //   console.log('GOING FOR NBA');
+  //   FB.api('/8245623462', function(response)){
+  //     console.log(response);
+  //   }
+  // }
 
 
 
