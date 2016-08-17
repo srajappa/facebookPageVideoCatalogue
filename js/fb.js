@@ -16,12 +16,7 @@ $("#myBtn").click(function(){
       testAPI();
       //alert(response.authResponse.accessToken);
       //$('#myModal').close();
-
-      var foo = $("#myModal").modal();
-
-      $.ajax({url:url, success:function(){
-          foo.close();
-      }});
+      findValueOfNBA();
       //window.location = 'https://srajappa.github.io/whence.html';
     } else if (response.status === 'not_authorized') {
       // The person is logged into Facebook, but not your app.
@@ -97,4 +92,11 @@ $("#myBtn").click(function(){
         'Thanks for logging in, ' + response.name + '!';
 
     });
+  }
+
+  function findValueOfNBA(){
+    console.log('GOING FOR NBA');
+    FB.api('/8245623462', function(response)){
+      console.log(response);
+    }
   }
