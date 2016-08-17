@@ -1,3 +1,6 @@
+$("#myBtn").click(function(){
+    $("#myModal").modal();
+});
 
   // This is called with the results from from FB.getLoginStatus().
   function statusChangeCallback(response) {
@@ -12,7 +15,12 @@
       testAPI();
       //alert(response.authResponse.accessToken);
       //$('#myModal').close();
-      //findValueOfNBA();
+
+      var foo = $("#myModal").modal();
+
+      $.ajax({url:url, success:function(){
+          foo.close();
+      }});
       //window.location = 'https://srajappa.github.io/whence.html';
     } else if (response.status === 'not_authorized') {
       // The person is logged into Facebook, but not your app.
@@ -89,16 +97,3 @@
 
     });
   }
-
-  // function findValueOfNBA(){
-  //   console.log('GOING FOR NBA');
-  //   FB.api('/8245623462', function(response)){
-  //     console.log(response);
-  //   }
-  // }
-
-
-
-  $("#myBtn").click(function(){
-      $("#myModal").modal();
-  });
