@@ -11,7 +11,7 @@
       // Logged into your app and Facebook.
       testAPI();
       alert(response.authResponse.accessToken);
-      $('#modbody').dialog("close");
+      $.modal.close();
       //window.location = 'https://srajappa.github.io/whence.html';
     } else if (response.status === 'not_authorized') {
       // The person is logged into Facebook, but not your app.
