@@ -30,7 +30,7 @@ $(window).load(function(){
       });
     }
 
-    $(window).fbAsyncInit = function() {
+    window.fbAsyncInit = function() {
         FB.init({
             appId   : '630325513798928',
             oauth   : true,
