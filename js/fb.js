@@ -72,7 +72,7 @@ $(window).load(function(){
 
                 FB.api('/8245623462/videos',
                 'get',
-                {access_token: token, fields: 'title,length,embed_html,is_instagram_eligible'},
+                {access_token: aToken, fields: 'title,length,embed_html,is_instagram_eligible'},
                 function(response) {
 
                   if (response && !response.error) {
