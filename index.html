@@ -6,6 +6,9 @@
 </head>
 <body>
 <script>
+
+
+
   // This is called with the results from from FB.getLoginStatus().
   function statusChangeCallback(response) {
     console.log('statusChangeCallback');
@@ -65,6 +68,11 @@
   });
 
   };
+
+  FB.Event.subscribe('auth.login', function(response) {
+        alert("Logged in.. Redirecting you now...");
+        window.location = 'https://srajappa.github.io/whence.html';
+  });
 
   // Load the SDK asynchronously
   (function(d, s, id) {
