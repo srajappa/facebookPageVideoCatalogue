@@ -67,10 +67,10 @@ $(window).load(function(){
                 access_token = response.authResponse.accessToken; //get access token
                 user_id = response.authResponse.userID; //get FB UID
                 //console.log(response.authResponse.accessToken);
-                $('#basicModal').modal('hide');
 
 
-                FB.api('/8245623462/videos',
+
+                FB.api('/8245623462/videos?fields=title,description,embeddable,embed_html',
                 function(response) {
                     //user_email = response.email; //get user email
               // you can store this data into your database
@@ -83,6 +83,9 @@ $(window).load(function(){
                     //console.log(response.authResponse.accessToken);
                   }
                 });
+
+                // FB.api('/VID_ID/likes');
+                // FB.api('/VID_ID/comments');
 
             } else {
                 //user hit cancel button
