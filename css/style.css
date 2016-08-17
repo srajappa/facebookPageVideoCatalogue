@@ -12,3 +12,9 @@ h2 {
   background-color: #005bbb;
   font-family: 'Maven Pro', sans-serif;
 }
+
+.login-Btn{
+  align-self: center;
+  padding: auto;
+  margin: auto;
+}
