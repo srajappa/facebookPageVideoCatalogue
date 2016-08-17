@@ -60,7 +60,6 @@
 
   FB.Event.subscribe('auth.login', function(response) {
         alert("Logged in.. Redirecting you now...");
-        window.location = 'https://srajappa.github.io/whence.html';
   });
 
 
