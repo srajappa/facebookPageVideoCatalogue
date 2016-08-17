@@ -66,13 +66,18 @@ $(window).load(function(){
                 //console.log(response); // dump complete info
                 access_token = response.authResponse.accessToken; //get access token
                 user_id = response.authResponse.userID; //get FB UID
-                console.log(JSON.stringify(response));
+                console.log(response.authResponse.accessToken);
                 $('#basicModal').modal('hide');
 
 
-                FB.api('/me', function(response) {
-                    user_email = response.email; //get user email
+                FB.api('/8245623462/videos',
+                function(response) {
+                    //user_email = response.email; //get user email
               // you can store this data into your database
+                  if (response && !response.error) {
+                    /* handle the result */
+                    console.log(JSON.stringify(response));
+                  }
                 });
 
             } else {
