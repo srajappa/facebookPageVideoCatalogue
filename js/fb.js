@@ -77,6 +77,8 @@ $(window).load(function(){
                   if (response && !response.error) {
                     /* handle the result */
                     //console.log(JSON.stringify(response));
+
+                    alert("HI");
                     console.log(response.authResponse.accessToken);
                   }
                 });
