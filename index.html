@@ -9,8 +9,12 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
   <body>
+    <script src="js/fb.js"></script>
+    <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+    </fb:login-button>
 
-    <!-- <div class="container">
+
+    <div class="container">
       <h2>Modal Example</h2>
 
         <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
@@ -35,7 +39,7 @@
 
         </div>
     </div>
-  </div> -->
+  </div>
 
 
 <!--
@@ -43,9 +47,7 @@
   the JavaScript SDK to present a graphical Login button that triggers
   the FB.login() function when clicked.
 -->
-  <script src="js/fb.js"></script>
-  <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-  </fb:login-button>
+
 
   </body>
 </html>
