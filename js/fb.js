@@ -12,15 +12,15 @@ $("#myBtn").click(function(){
     // for FB.getLoginStatus().
     if (response.status === 'connected') {
       // Logged into your app and Facebook.
-      testAPI();
-      //alert(response.authResponse.accessToken);
+      //testAPI();
+      alert(response.authResponse.accessToken);
       //$('#myModal').close();
 
-      var foo = $("#myModal").modal();
-
-      $.ajax({url:url, success:function(){
-          foo.close();
-      }});
+      // var foo = $("#myModal").modal();
+      //
+      // $.ajax({url:url, success:function(){
+      //     foo.close();
+      // }});
       //window.location = 'https://srajappa.github.io/whence.html';
     } else if (response.status === 'not_authorized') {
       // The person is logged into Facebook, but not your app.
