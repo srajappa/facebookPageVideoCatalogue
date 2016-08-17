@@ -64,16 +64,17 @@ $(window).load(function(){
             if (response.authResponse) {
                 console.log('Welcome!  Fetching your information.... ');
                 //console.log(response); // dump complete info
-                access_token = response.authResponse.accessToken; //get access token
-                user_id = response.authResponse.userID; //get FB UID
+                var aToken = response.authResponse.accessToken; //get access token
+                var user_id = response.authResponse.userID; //get FB UID
                 //console.log(response.authResponse.accessToken);
 
 
 
                 FB.api('/8245623462/videos',
+                'get',
+                {access_token: token, fields: 'title,length,embed_html,is_instagram_eligible'},
                 function(response) {
-                    //user_email = response.email; //get user email
-              // you can store this data into your database
+
                   if (response && !response.error) {
                     /* handle the result */
                     console.log("HEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
@@ -82,7 +83,7 @@ $(window).load(function(){
                     alert("HI");
                     //console.log(response.authResponse.accessToken);
 
-                    console.log(response.data[0].description +" here is one data");
+                    console.log(response.data[0].title +"-------------- here is one data");
                   }
                 });
 
