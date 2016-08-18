@@ -77,30 +77,15 @@ $(window).load(function(){
                 var user_id = response.authResponse.userID; //get FB UID
                 //console.log(response.authResponse.accessToken);
 
+                var rio2016 = 1102184159816462;
+                var nba = 8245623462;
 
 
-                FB.api('/8245623462/videos',
-                'get',
-                {access_token: aToken, fields: 'title,description,length,embed_html,is_instagram_eligible'},
-                function(response) {
-
-                  if (response && !response.error) {
-                    /* handle the result */
-                    console.log("HEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
-                    //console.log(JSON.stringify(response));
-                    $('#basicModal').modal('hide');
-                    //alert("HI");
-                    //console.log(response.authResponse.accessToken);
-
-                    console.log(response.data[0].title +"-------------- here is one data");
+                processPageIDs(response, aToken, rio2016);
+                processPageIDs(response, aToken, nba);
 
 
-                    //RENDERING ON page, maybe I can call a function
 
-                    getFrames(response);
-
-                  }
-                });
 
                 // FB.api('/VID_ID/likes');
                 // FB.api('/VID_ID/comments');
@@ -135,6 +120,35 @@ $(window).load(function(){
         $('#allInfo').append('<div class = "row" id="addr'+(i+1)+'"></div>');
       }
     }
+
+    function processPageIDs(response,aToken, pageID){
+      var pageVidString = '/'+pageID+'/videos';
+      FB.api(pageVidString,
+      'get',
+      {access_token: aToken, fields: 'title,description,length,embed_html,is_instagram_eligible'},
+      function(response) {
+
+        if (response && !response.error) {
+          /* handle the result */
+          //console.log("HEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
+          //console.log(JSON.stringify(response));
+          $('#basicModal').modal('hide');
+          //alert("HI");
+          //console.log(response.authResponse.accessToken);
+
+          console.log(response.data[0].title +"-------------- here is one data");
+
+
+          //RENDERING ON page, maybe I can call a function
+
+          getFrames(response);
+
+        }
+      });
+    }
+
+
+
 
     (function(d, s, id) {
       var js, fjs = d.getElementsByTagName(s)[0];
