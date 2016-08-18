@@ -141,12 +141,12 @@ $(window).load(function(){
         console.log(link0);
         //Adding the information here
         //CREATE Seprate strings and then combine them to .html file
-        var thingy = "<table class=\"table table-bordered table-hover\"><thead><tr ><th class=\"text-center\">Param</th>Values</th></tr></thead><tbody>";
+        var thingy = "<table class=\"table table-bordered table-hover\"><thead><tr ><th class=\"text-center\">Param</th><th>Values</th></tr></thead><tbody>";
 
 
         for(var j in response.data[i]){
-          if(j.hasOwnProperty('embed_html')) continue;
-          thingy+="<tr><td>"+j+"</td><td>"+response.data[i].j+"</td></tr>";
+          if(j==='embed_html') continue;
+          thingy+="<tr><td>"+j+"</td><td>"+response.data[i].j.toString()+"</td></tr>";
         }
 
         thingy+="</tbody></table>";
