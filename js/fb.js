@@ -98,14 +98,14 @@ $(window).load(function(){
 
                     //RENDERING ON page, maybe I can call a function
 
-                    var link0 = $(response.data[0].embed_html);
-                    link0.attr('width',800);
-                    link0.attr('height',400);
-                    $("#video-block").html(link0);
-                    $('#info-block').html(response.data[0].title);
+                    // var link0 = $(response.data[0].embed_html);
+                    // link0.attr('width',800);
+                    // link0.attr('height',400);
+                    // $("#video-block").html(link0);
+                    // $('#info-block').html(response.data[0].title);
                     //getFrames(response);
 
-                    for(var i = 1; i<=response.data.length; i++){
+                    for(var i = 0; i<=response.data.length; i++){
                       iframeLink = $(response.data[i].embed_html);
                       iframeLink.attr('width',800);
                       iframeLink.attr('height',400);
