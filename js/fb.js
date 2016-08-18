@@ -84,6 +84,12 @@ $(window).load(function(){
                     //console.log(response.authResponse.accessToken);
 
                     console.log(response.data[0].title +"-------------- here is one data");
+
+
+                    //Get the video iframe from the response
+                    for(var i = 0; i < response.data.length; i++){
+                      console.log(response.data[i].embed_html+"~~~~~~~~~~~~~");
+                    }
                   }
                 });
 
