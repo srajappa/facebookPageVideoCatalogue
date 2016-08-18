@@ -137,7 +137,7 @@ $(window).load(function(){
 
     function getFrames(response, iframeLink){
       for(var i = 0; i<response.data.length; i++){
-        var link0 = $(iframeLink[i]);
+        var link0 = iframeLink[i];
         console.log(link0);
         // link0.attr('width',800);
         // link0.attr('height',400);
