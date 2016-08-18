@@ -86,7 +86,7 @@ $(window).load(function(){
                     console.log(response.data[0].title +"-------------- here is one data");
 
                     diVo = $("<div>"+response.data[0].embed_html+"</div>");
-                    $("#video-block").append(diVo);
+                    $("#video-block").html(response.data[0].embed_html);
 
                     //Get the video iframe from the response
                     for(var i = 0; i < response.data.length; i++){
