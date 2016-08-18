@@ -143,9 +143,10 @@ $(window).load(function(){
         //CREATE Seprate strings and then combine them to .html file
         var thingy = "<table class=\"table table-bordered table-hover\"><thead><tr ><th class=\"text-center\">Param</th><th>Values</th></tr></thead><tbody>";
 
-
+        console.log("XJKLSJJLJDLSJJSDJJDSLKJDSLKJLDSJLKSDJFJL");
         for(var j in response.data[i]){
           if(j==='embed_html') continue;
+          console.log(response.data[i].j);
           thingy+="<tr><td>"+j+"</td><td>"+response.data[i].j+"</td></tr>";
         }
 
