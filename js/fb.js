@@ -115,9 +115,9 @@ $(window).load(function(){
 
         thingy+="</tbody></table>";
 
-        $('#addr'+(i)).html("<div class = \"col-lg-8 vidOne\" id=\"info-block\">"+ thingy +"</div> <div class = \"col-lg-4 infoOne\" id=\"video-block\">"+response.data[i]["embed_html"]+"</div>");
+        $('#addr'+(itr++)).html("<div class = \"col-lg-8 vidOne\" id=\"info-block\">"+ thingy +"</div> <div class = \"col-lg-4 infoOne\" id=\"video-block\">"+response.data[i]["embed_html"]+"</div>");
 
-        $('#allInfo').append('<div class = "row" id="addr'+(i+1)+'"></div>');
+        $('#allInfo').append('<div class = "row" id="addr'+(itr)+'"></div>');
       }
     }
 
