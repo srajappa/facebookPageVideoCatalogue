@@ -1,6 +1,12 @@
 $(window).load(function(){
         $('#basicModal').modal('show');
     });
+
+    $(window).scroll(function() {
+      if($(window).scrollTop() + $(window).height() > $(document).height() - 100) {
+          alert("bottom!");
+      }
+   });
     function statusChangeCallback(response) {
       console.log('statusChangeCallback');
       console.log(response.authResponse.accessToken);
