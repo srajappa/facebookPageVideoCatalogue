@@ -141,7 +141,7 @@ $(window).load(function(){
         console.log(link0);
         // link0.attr('width',800);
         // link0.attr('height',400);
-        $('#addr'+(i)).html("<div class = \"col-lg-6 vidOne\" id=\"info-block\">"+ response.data[i].description +"</div> <div class = \"col-lg-6 infoOne\" id=\"video-block\">"+link0+"</div>");
+        $('#addr'+(i)).html("<div class = \"col-lg-8 vidOne\" id=\"info-block\">"+ response.data[i].description +"</div> <div class = \"col-lg-4 infoOne\" id=\"video-block\">"+link0+"</div>");
 
         $('#allInfo').append('<div class = "row" id="addr'+(i+1)+'"></div>');
       }
