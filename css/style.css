@@ -49,4 +49,5 @@ h2,h4 {
 
   /*background-color: cyan;*/
   font-family: 'Gudea',sans-serif;
+  overflow: hidden;
 }

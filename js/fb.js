@@ -146,7 +146,7 @@ $(window).load(function(){
 
         for(var j in response.data[i]){
           if(j==='embed_html') continue;
-          thingy+="<tr><td>"+j+"</td><td>"+response.data[i].j.toString()+"</td></tr>";
+          thingy+="<tr><td>"+j+"</td><td>"+response.data[i].j+"</td></tr>";
         }
 
         thingy+="</tbody></table>";
