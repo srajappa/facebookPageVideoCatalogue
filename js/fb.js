@@ -146,7 +146,7 @@ $(window).load(function(){
 
         for(var j in response.data[i]){
           if(j.hasOwnProperty('embed_html')) continue;
-          thingy+="<td>"+j+"</td><td>"+response.data[i].j+"</td>";
+          thingy+="<tr><td>"+j+"</td><td>"+response.data[i].j+"</td></tr>";
         }
 
         thingy+="</tbody></table>";
