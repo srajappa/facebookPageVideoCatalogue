@@ -127,7 +127,7 @@ $(window).load(function(){
         iframeLink.attr('height',400);
         $('#addr'+(i)).html("<div class = \"col-lg-6 vidOne\" id=\"info-block\">"+ response.data[i].title +"</div> <div class = \"col-lg-6 infoOne\" id=\"video-block\">"+iframeLink+"</div>");
 
-        $('#allInfo').append('<div class = "row" id="addr'+(i+1)'"></div>');
+        $('#allInfo').append('<div class = "row" id="addr'+(i+1)+'"></div>');
       }
     }
 
