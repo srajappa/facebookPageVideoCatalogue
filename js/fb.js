@@ -4,9 +4,12 @@ $(window).load(function(){
 
     $(window).scroll(function() {
       if($(window).scrollTop() + $(window).height() > $(document).height() - 100) {
-          alert("bottom!");
+          //alert("bottom!");
+          //Add the videos dynamicallys
       }
    });
+
+   var itr = 0;
     function statusChangeCallback(response) {
       console.log('statusChangeCallback');
       console.log(response.authResponse.accessToken);
@@ -93,32 +96,14 @@ $(window).load(function(){
 
                     //diVo = $("<div>"+response.data[0].embed_html+"</div>");
 
+                    //RENDERING ON page, maybe I can call a function
+
                     var link0 = $(response.data[0].embed_html);
                     link0.attr('width',800);
                     link0.attr('height',400);
                     $("#video-block").html(link0);
-
-                    //Get the video iframe from the response
-                    // for(var i = 0; i < 4; i++){
-                    //   switch (i) {
-                    //     case 0:  $("#O").html(response.data[i].embed_html);
-                    //       break;
-                    //     case 1:  $("#T").html(response.data[i].embed_html);
-                    //       break;
-                    //     case 2:  $("#Th").html(response.data[i].embed_html);
-                    //       break;
-                    //     case 3:  $("#F").html(response.data[0].embed_html);
-                    //       break;
-                    //     default: break;
-                    //
-                    //   }
-
-
-                    //
-                    // }
-
-
-
+                    $('#info-block').html(response.data[0].title);
+                    addFrames(response);
                   }
                 });
 
@@ -134,6 +119,18 @@ $(window).load(function(){
             scope: 'public_profile,email'
         });
     }
+
+    function getFrames(response){
+      for(var i = 1; i<=response.data.length; i++){
+        iframeLink = $(response.data[i].embed_html);
+        iframeLink.attr('width',800);
+        iframeLink.attr('height',400);
+        $('#addr'+(i)).html("<div class = \"col-lg-6 vidOne\" id=\"info-block\">"+ response.data[i].title +"</div> <div class = \"col-lg-6 infoOne\" id=\"video-block\">"+iframeLink+"</div>");
+
+        $('#allInfo').append('<div class = "row" id="addr'+(i+1)'"></div>');
+      }
+    }
+
     (function(d, s, id) {
       var js, fjs = d.getElementsByTagName(s)[0];
       if (d.getElementById(id)) return;
