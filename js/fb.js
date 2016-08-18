@@ -80,16 +80,22 @@ $(window).load(function(){
                     console.log("HEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
                     console.log(JSON.stringify(response));
                     $('#basicModal').modal('hide');
-                    alert("HI");
+                    //alert("HI");
                     //console.log(response.authResponse.accessToken);
 
                     console.log(response.data[0].title +"-------------- here is one data");
 
+                    diVo = $("<div>"+response.data[0].embed_html+"</div>");
+                    $("#video-block").append(diVo);
 
                     //Get the video iframe from the response
                     for(var i = 0; i < response.data.length; i++){
                       console.log(response.data[i].embed_html+"~~~~~~~~~~~~~");
+
                     }
+
+
+
                   }
                 });
 
