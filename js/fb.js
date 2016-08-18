@@ -137,10 +137,10 @@ $(window).load(function(){
 
     function getFrames(response, iframeLink){
       for(var i = 0; i<response.data.length; i++){
-        var link0 = iframeLink[i];
+        var link0 = $(iframeLink[i]);
         console.log(link0);
-        link0.attr('width',800);
-        link0.attr('height',400);
+        // link0.attr('width',800);
+        // link0.attr('height',400);
         $('#addr'+(i)).html("<div class = \"col-lg-6 vidOne\" id=\"info-block\">"+ response.data[i].title +"</div> <div class = \"col-lg-6 infoOne\" id=\"video-block\">"+link0+"</div>");
 
         $('#allInfo').append('<div class = "row" id="addr'+(i+1)+'"></div>');
