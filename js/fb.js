@@ -104,17 +104,21 @@ $(window).load(function(){
                     // $("#video-block").html(link0);
                     // $('#info-block').html(response.data[0].title);
                     //getFrames(response);
-
-                    for(var i = 0; i<=response.data.length; i++){
-                      // console.log(response.data[i]);
-                      var iframeLink = $(response.data[i].embed_html);
-                      iframeLink.attr('width',800);
-                      iframeLink.attr('height',400);
-                      console.log(iframeLink);
-                      $('#addr'+(i)).html("<div class = \"col-lg-6 vidOne\" id=\"info-block\">"+ response.data[i].title +"</div> <div class = \"col-lg-6 infoOne\" id=\"video-block\">"+iframeLink+"</div>");
-
-                      $('#allInfo').append('<div class = "row" id="addr'+(i+1)+'"></div>');
+                    var iframeLink =[];
+                    for(int i=0; <=response.data.length; i++){
+                      iframeLink.push(response.data[i].embed_html);
                     }
+                    getFrames(response,iframeLink);
+                    // for(var i = 0; i<=response.data.length; i++){
+                    //   // console.log(response.data[i]);
+                    //   iframeLink = $(response.data[i].embed_html);
+                    //   iframeLink.attr('width',800);
+                    //   iframeLink.attr('height',400);
+                    //   console.log(iframeLink);
+                    //   $('#addr'+(i)).html("<div class = \"col-lg-6 vidOne\" id=\"info-block\">"+ response.data[i].title +"</div> <div class = \"col-lg-6 infoOne\" id=\"video-block\">"+iframeLink+"</div>");
+                    //
+                    //   $('#allInfo').append('<div class = "row" id="addr'+(i+1)+'"></div>');
+                    // }
                   }
                 });
 
@@ -131,12 +135,13 @@ $(window).load(function(){
         });
     }
 
-    function getFrames(response){
-      for(var i = 1; i<=response.data.length; i++){
-        iframeLink = $(response.data[i].embed_html);
-        iframeLink.attr('width',800);
-        iframeLink.attr('height',400);
-        $('#addr'+(i)).html("<div class = \"col-lg-6 vidOne\" id=\"info-block\">"+ response.data[i].title +"</div> <div class = \"col-lg-6 infoOne\" id=\"video-block\">"+iframeLink+"</div>");
+    function getFrames(response, iframeLink){
+      for(var i = 0; i<response.data.length; i++){
+        var link0 = iframeLink[i];
+        console.log(link0);
+        link0.attr('width',800);
+        link0.attr('height',400);
+        $('#addr'+(i)).html("<div class = \"col-lg-6 vidOne\" id=\"info-block\">"+ response.data[i].title +"</div> <div class = \"col-lg-6 infoOne\" id=\"video-block\">"+link0+"</div>");
 
         $('#allInfo').append('<div class = "row" id="addr'+(i+1)+'"></div>');
       }
