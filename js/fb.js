@@ -103,7 +103,7 @@ $(window).load(function(){
                     link0.attr('height',400);
                     $("#video-block").html(link0);
                     $('#info-block').html(response.data[0].title);
-                    addFrames(response);
+                    getFrames(response);
                   }
                 });
 
