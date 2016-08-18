@@ -107,7 +107,7 @@ $(window).load(function(){
                     var iframeLink =[];
                     for(var i=0; i < response.data.length; i++){
                       response.data[i].embed_html.attr('width',800);
-                      gadar.attr('height',400);
+                      response.data[i].embed_html.attr('height',400);
                       iframeLink.push(response.data[i].embed_html);
                     }
                     getFrames(response,iframeLink);
