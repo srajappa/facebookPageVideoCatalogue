@@ -105,7 +105,7 @@ $(window).load(function(){
                     // $('#info-block').html(response.data[0].title);
                     //getFrames(response);
                     var iframeLink =[];
-                    for(int i=0; <=response.data.length; i++){
+                    for(var i=0; <=response.data.length; i++){
                       iframeLink.push(response.data[i].embed_html);
                     }
                     getFrames(response,iframeLink);
