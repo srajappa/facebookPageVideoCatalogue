@@ -94,31 +94,11 @@ $(window).load(function(){
 
                     console.log(response.data[0].title +"-------------- here is one data");
 
-                    //diVo = $("<div>"+response.data[0].embed_html+"</div>");
 
                     //RENDERING ON page, maybe I can call a function
 
-                    // var link0 = $(response.data[0].embed_html);
-                    // link0.attr('width',800);
-                    // link0.attr('height',400);
-                    // $("#video-block").html(link0);
-                    // $('#info-block').html(response.data[0].title);
-                    //getFrames(response);
-                    var iframeLink =[];
-                    for(var i=0; i < response.data.length; i++){
-                      iframeLink.push(response.data[i].embed_html);
-                    }
-                    getFrames(response,iframeLink);
-                    // for(var i = 0; i<=response.data.length; i++){
-                    //   // console.log(response.data[i]);
-                    //   iframeLink = $(response.data[i].embed_html);
-                    //   iframeLink.attr('width',800);
-                    //   iframeLink.attr('height',400);
-                    //   console.log(iframeLink);
-                    //   $('#addr'+(i)).html("<div class = \"col-lg-6 vidOne\" id=\"info-block\">"+ response.data[i].title +"</div> <div class = \"col-lg-6 infoOne\" id=\"video-block\">"+iframeLink+"</div>");
-                    //
-                    //   $('#allInfo').append('<div class = "row" id="addr'+(i+1)+'"></div>');
-                    // }
+                    getFrames(response);
+
                   }
                 });
 
@@ -137,23 +117,20 @@ $(window).load(function(){
 
     function getFrames(response, iframeLink){
       for(var i = 0; i<response.data.length; i++){
-        var link0 = iframeLink[i];
-        //console.log(link0);
+
         //Adding the information here
-        //CREATE Seprate strings and then combine them to .html file
+        //CREATE Seprate strings and then combine them to .html class
         var thingy = "<table class=\"table table-bordered table-hover\"><thead><tr><th class=\"text-center\">Param</th><th>Values</th></tr></thead><tbody>";
 
-        console.log("XJKLSJJLJDLSJJSDJJDSLKJDSLKJLDSJLKSDJFJL");
-        //console.log(response.data[i]);
+
         for(var j in response.data[i]){
           if(j==='embed_html') continue;
-          //console.log(response.data[i].j);
           thingy+="<tr><td>"+j+"</td><td>"+response.data[i][j]+"</td></tr>";
         }
 
         thingy+="</tbody></table>";
 
-        $('#addr'+(i)).html("<div class = \"col-lg-8 vidOne\" id=\"info-block\">"+ thingy +"</div> <div class = \"col-lg-4 infoOne\" id=\"video-block\">"+link0+"</div>");
+        $('#addr'+(i)).html("<div class = \"col-lg-8 vidOne\" id=\"info-block\">"+ thingy +"</div> <div class = \"col-lg-4 infoOne\" id=\"video-block\">"+response.data[i]["embed_html"]+"</div>");
 
         $('#allInfo').append('<div class = "row" id="addr'+(i+1)+'"></div>');
       }
