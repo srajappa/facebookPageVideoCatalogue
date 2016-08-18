@@ -34,16 +34,19 @@ h2,h4 {
 
 .topOne{
   border: none;
-  margin: 80px;
+  margin: 40px;
 }
 
 
-.leftOne{
-  background-color: #000000;
+.vidOne{
+  /*background-color: #000000;*/
   margin: auto;
+  padding: auto;
+  align-items: center;
 }
 
-.rightOne{
-  margin-left: 20px;
+.infoOne{
+
+  /*background-color: cyan;*/
   font-family: 'Gudea',sans-serif;
 }
