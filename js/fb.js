@@ -87,11 +87,23 @@ $(window).load(function(){
 
                     diVo = $("<div>"+response.data[0].embed_html+"</div>");
                     $("#video-block").html(response.data[0].embed_html);
-                    $("#video-block").html(response.data[1].embed_html);
 
                     //Get the video iframe from the response
-                    for(var i = 0; i < response.data.length; i++){
-                      console.log(response.data[i].embed_html+"~~~~~~~~~~~~~");
+                    for(var i = 0; i < 4; i++){
+                      switch (i) {
+                        case 0:  $("#O").html(response.data[i].embed_html);
+                          break;
+                        case 1:  $("#T").html(response.data[i].embed_html);
+                          break;
+                        case 2:  $("#Th").html(response.data[i].embed_html);
+                          break;
+                        case 3:  $("#F").html(response.data[0].embed_html);
+                          break;
+                        default: break;
+
+                      }
+
+
 
                     }
 

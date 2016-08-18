@@ -19,3 +19,13 @@ h2,h4 {
   padding: auto;
   margin: auto;
 }
+
+
+#video-block div {
+        height: 500px;
+        width: 500px;
+        border: 1px solid red;
+        margin-left: 5px;
+        float: left; /*Here you can also use display: inline-block instead of float:left*/
+        
+}
