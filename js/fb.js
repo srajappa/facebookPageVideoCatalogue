@@ -107,7 +107,7 @@ $(window).load(function(){
 
                     for(var i = 0; i<=response.data.length; i++){
                       // console.log(response.data[i]);
-                      iframeLink = $(response.data[i].embed_html);
+                      var iframeLink = $(response.data[i].embed_html);
                       iframeLink.attr('width',800);
                       iframeLink.attr('height',400);
                       console.log(iframeLink);
