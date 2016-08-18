@@ -139,9 +139,19 @@ $(window).load(function(){
       for(var i = 0; i<response.data.length; i++){
         var link0 = iframeLink[i];
         console.log(link0);
-        // link0.attr('width',800);
-        // link0.attr('height',400);
-        $('#addr'+(i)).html("<div class = \"col-lg-8 vidOne\" id=\"info-block\">"+ response.data[i].description +"</div> <div class = \"col-lg-4 infoOne\" id=\"video-block\">"+link0+"</div>");
+        //Adding the information here
+        //CREATE Seprate strings and then combine them to .html file
+        var thingy = "<table class=\"table table-bordered table-hover\"><thead><tr ><th class=\"text-center\">Param</th>Values</th></tr></thead><tbody>";
+
+
+        for(var j in response.data[i]){
+          if(j.hasOwnProperty(embed_html)) continue;
+          thingy+="<td>"+j+"</td><td>"+response.data[i].j+"</td>";
+        }
+
+        thingy+="</tbody></table>";
+
+        $('#addr'+(i)).html("<div class = \"col-lg-8 vidOne\" id=\"info-block\">"+ thingy +"</div> <div class = \"col-lg-4 infoOne\" id=\"video-block\">"+link0+"</div>");
 
         $('#allInfo').append('<div class = "row" id="addr'+(i+1)+'"></div>');
       }
