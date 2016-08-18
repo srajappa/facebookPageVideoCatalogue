@@ -72,7 +72,7 @@ $(window).load(function(){
 
                 FB.api('/8245623462/videos',
                 'get',
-                {access_token: aToken, fields: 'title,length,embed_html,is_instagram_eligible'},
+                {access_token: aToken, fields: 'title,description,length,embed_html,is_instagram_eligible'},
                 function(response) {
 
                   if (response && !response.error) {
@@ -85,23 +85,23 @@ $(window).load(function(){
 
                     console.log(response.data[0].title +"-------------- here is one data");
 
-                    diVo = $("<div>"+response.data[0].embed_html+"</div>");
+                    //diVo = $("<div>"+response.data[0].embed_html+"</div>");
                     $("#video-block").html(response.data[0].embed_html);
 
                     //Get the video iframe from the response
-                    for(var i = 0; i < 4; i++){
-                      switch (i) {
-                        case 0:  $("#O").html(response.data[i].embed_html);
-                          break;
-                        case 1:  $("#T").html(response.data[i].embed_html);
-                          break;
-                        case 2:  $("#Th").html(response.data[i].embed_html);
-                          break;
-                        case 3:  $("#F").html(response.data[0].embed_html);
-                          break;
-                        default: break;
-
-                      }
+                    // for(var i = 0; i < 4; i++){
+                    //   switch (i) {
+                    //     case 0:  $("#O").html(response.data[i].embed_html);
+                    //       break;
+                    //     case 1:  $("#T").html(response.data[i].embed_html);
+                    //       break;
+                    //     case 2:  $("#Th").html(response.data[i].embed_html);
+                    //       break;
+                    //     case 3:  $("#F").html(response.data[0].embed_html);
+                    //       break;
+                    //     default: break;
+                    //
+                    //   }
 
 
 

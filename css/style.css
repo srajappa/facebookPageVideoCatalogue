@@ -1,4 +1,4 @@
-@import 'https://fonts.googleapis.com/css?family=Maven+Pro|Varela+Round';
+@import 'https://fonts.googleapis.com/css?family=Maven+Pro|Varela+Round|Gudea';
 h2,h4 {
   text-align: center;
   font-family: 'Maven Pro', sans-serif;
@@ -27,5 +27,23 @@ h2,h4 {
         border: 1px solid red;
         margin-left: 5px;
         float: left; /*Here you can also use display: inline-block instead of float:left*/
-        
+
+}
+
+
+
+.topOne{
+  border: none;
+  margin: 80px;
+}
+
+
+.leftOne{
+  background-color: #000000;
+  margin: auto;
+}
+
+.rightOne{
+  margin-left: 20px;
+  font-family: 'Gudea',sans-serif;
 }
