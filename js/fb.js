@@ -87,7 +87,7 @@ $(window).load(function(){
                   if (response && !response.error) {
                     /* handle the result */
                     console.log("HEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
-                    console.log(JSON.stringify(response));
+                    //console.log(JSON.stringify(response));
                     $('#basicModal').modal('hide');
                     //alert("HI");
                     //console.log(response.authResponse.accessToken);
@@ -106,6 +106,7 @@ $(window).load(function(){
                     //getFrames(response);
 
                     for(var i = 0; i<=response.data.length; i++){
+                      console.log(response.data[i]);
                       iframeLink = $(response.data[i].embed_html);
                       iframeLink.attr('width',800);
                       iframeLink.attr('height',400);
