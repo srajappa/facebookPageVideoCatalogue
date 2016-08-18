@@ -106,10 +106,9 @@ $(window).load(function(){
                     //getFrames(response);
                     var iframeLink =[];
                     for(var i=0; i < response.data.length; i++){
-                      gadar = $(response.data[i].embed_html);
-                      gadar.attr('width',800);
+                      response.data[i].embed_html.attr('width',800);
                       gadar.attr('height',400);
-                      iframeLink.push(String(gadar));
+                      iframeLink.push(response.data[i].embed_html);
                     }
                     getFrames(response,iframeLink);
                     // for(var i = 0; i<=response.data.length; i++){
