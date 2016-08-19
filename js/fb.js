@@ -122,6 +122,7 @@ $(window).load(function(){
     }
 
     function processPageIDs(response,aToken, pageID){
+      console.log("first : "+pageID);
       var pageVidString = '/'+pageID+'/videos';
       FB.api(pageVidString,
       'get',
