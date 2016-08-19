@@ -117,9 +117,9 @@ $(window).load(function(){
           if(j==='embed_html') continue;
           thingy+="<tr><td>"+j+"</td><td>"+response.data[i][j]+"</td></tr>";
         }
-        var likesComments = getLikesAndComments(response.data[i].id); //Getting the likes and comments
+        //var likesComments = getLikesAndComments(response.data[i].id); //Getting the likes and comments
 
-        thingy+="<tr><td>Likes</td><td>"+likesComments[0]+"</td></tr>"+"<tr><td>Comments</td><td>"+likesComments[1]+"</td></tr>";
+        //thingy+="<tr><td>Likes</td><td>"+likesComments[0]+"</td></tr>"+"<tr><td>Comments</td><td>"+likesComments[1]+"</td></tr>";
 
 
         thingy+="</tbody></table>";
