@@ -81,8 +81,8 @@ $(window).load(function(){
                 var nba = 8245623462;
 
 
-                processPageIDs(response, aToken, rio2016);
                 processPageIDs(response, aToken, nba);
+                processPageIDs(response, aToken, rio2016);
 
 
 
