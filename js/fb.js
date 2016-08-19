@@ -10,6 +10,8 @@ $(window).load(function(){
    });
 
    var itr = 0;
+   var aToken,originalResponse;
+
     function statusChangeCallback(response) {
       console.log('statusChangeCallback');
       console.log(response.authResponse.accessToken);
@@ -73,16 +75,18 @@ $(window).load(function(){
             if (response.authResponse) {
                 console.log('Welcome!  Fetching your information.... ');
                 //console.log(response); // dump complete info
-                var aToken = response.authResponse.accessToken; //get access token
+                aToken = response.authResponse.accessToken; //get access token
                 var user_id = response.authResponse.userID; //get FB UID
                 //console.log(response.authResponse.accessToken);
 
                 var rio2016 = 1102184159816462;
                 var nba = 8245623462;
+                originalResponse = response;
 
 
-                processPageIDs(response, aToken, rio2016);
-                processPageIDs(response, aToken, nba);
+                processPageIDs(response, nba);
+                processPageIDs(response, rio2016);
+
 
 
 
@@ -100,7 +104,8 @@ $(window).load(function(){
         });
     }
 
-    function getFrames(response, iframeLink){
+    function getFrames(response){
+
       for(var i = 0; i<response.data.length; i++){
 
         //Adding the information here
@@ -112,6 +117,10 @@ $(window).load(function(){
           if(j==='embed_html') continue;
           thingy+="<tr><td>"+j+"</td><td>"+response.data[i][j]+"</td></tr>";
         }
+        var likesComments = getLikesAndComments(response.data[i].id); //Getting the likes and comments
+
+        thingy+="<tr><td>Likes</td><td>"+likesComments[0]+"</td></tr>"+"<tr><td>Comments</td><td>"+likesComments[1]+"</td></tr>";
+
 
         thingy+="</tbody></table>";
 
@@ -121,7 +130,7 @@ $(window).load(function(){
       }
     }
 
-    function processPageIDs(response,aToken, pageID){
+    function processPageIDs(response, pageID){
       var pageVidString = '/'+pageID+'/videos';
       FB.api(pageVidString,
       'get',
@@ -129,13 +138,8 @@ $(window).load(function(){
       function(response) {
 
         if (response && !response.error) {
-          /* handle the result */
-          //console.log("HEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
-          //console.log(JSON.stringify(response));
-          $('#basicModal').modal('hide');
-          //alert("HI");
-          //console.log(response.authResponse.accessToken);
 
+          $('#basicModal').modal('hide');
           console.log(response.data[0].title +"-------------- here is one data");
 
 
@@ -147,7 +151,30 @@ $(window).load(function(){
       });
     }
 
+    function getLikesAndComments(objectID){
+      var tempResp = originalResponse;
+      var lC =[];
 
+      FB.api(objectID+'/likes',
+      'get',
+      {access_token: aToken, fields: 'summary=true'},
+      function(tempResp){
+        if(tempResp && !tempResp.error){
+          lC.push(tempResp.summary["total_count"]);
+        }
+      });
+      tempResp = originalResponse;
+      FB.api(objectID+'/comments',
+      'get',
+      {access_token: aToken, fields: 'summary=true'},
+      function(tempResp){
+        if(tempResp && !tempResp.error){
+          lC.push(tempResp.summary["total_count"]);
+        }
+      });
+
+      return lc;
+    }
 
 
     (function(d, s, id) {
