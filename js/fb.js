@@ -100,24 +100,29 @@ $(window).load(function(){
         });
     }
 
-    function getFrames(response, iframeLink){
+    function getFrames(response){
       for(var i = 0; i<response.data.length; i++){
 
         //Adding the information here
         //CREATE Seprate strings and then combine them to .html class
-        var thingy = "<table class=\"table table-bordered table-hover\"><thead><tr><th class=\"text-center\">Param</th><th>Values</th></tr></thead><tbody>";
+        // var thingy = "<table class=\"table table-bordered table-hover\"><thead><tr><th class=\"text-center\">Param</th><th>Values</th></tr></thead><tbody>";
+        //
+        //
+        // for(var j in response.data[i]){
+        //   if(j==='embed_html') continue;
+        //   thingy+="<tr><td>"+j+"</td><td>"+response.data[i][j]+"</td></tr>";
+        // }
+        //
+        // thingy+="</tbody></table>";
+        //
+        // $('#addr'+(itr++)).html("<div class = \"col-lg-8 vidOne\" id=\"info-block\">"+ thingy +"</div> <div class = \"col-lg-4 infoOne\" id=\"video-block\">"+response.data[i]["embed_html"]+"</div>");
+        //
+        // $('#allInfo').append('<div class = "row" id="addr'+(itr)+'"></div>');
 
 
-        for(var j in response.data[i]){
-          if(j==='embed_html') continue;
-          thingy+="<tr><td>"+j+"</td><td>"+response.data[i][j]+"</td></tr>";
-        }
-
-        thingy+="</tbody></table>";
-
-        $('#addr'+(itr++)).html("<div class = \"col-lg-8 vidOne\" id=\"info-block\">"+ thingy +"</div> <div class = \"col-lg-4 infoOne\" id=\"video-block\">"+response.data[i]["embed_html"]+"</div>");
-
-        $('#allInfo').append('<div class = "row" id="addr'+(itr)+'"></div>');
+        var thingy = "<article class=\"eachContent\" id=\"video0\"><header class=\"contentHeader\"><p> Head of Video </p></header><div class=\"videoContent\" style=\"padding-bottom: 0.907%;\">++</div>"+response.data[i]["embed_html"]+"<div class=\"metaDataVideo\"><ul class=\"unOrdList\"></ul></div></article>"
+        $('#video'+(itr++)).html(thingy);
+        $('#spineFrame').append('<article class="eachContent" id="video'+(itr)+'"></article>');
       }
     }
 
