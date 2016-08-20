@@ -120,7 +120,7 @@ $(window).load(function(){
         // $('#allInfo').append('<div class = "row" id="addr'+(itr)+'"></div>');
 
 
-        var thingy = "<article class=\"eachContent\" id=\"video0\"><header class=\"contentHeader\"><p> Head of Video </p></header><div class=\"videoContent\" style=\"padding-bottom: 0.907%;\">++</div>"+response.data[i]["embed_html"]+"<div class=\"metaDataVideo\"><ul class=\"unOrdList\"></ul></div></article>"
+        var thingy = "<article class=\"eachContent\" id=\"video0\"><header class=\"contentHeader\"><p>"+response.data[i]["title"]+"</p></header><div class=\"videoContent\" style=\"padding-bottom: 0.907%;\"></div>"+response.data[i]["embed_html"]+"<div class=\"metaDataVideo\"><ul class=\"unOrdList\"></ul></div></article>"
         $('#video'+(itr++)).html(thingy);
         $('#spineFrame').append('<article class="eachContent" id="video'+(itr)+'"></article>');
       }

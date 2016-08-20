@@ -1,7 +1,7 @@
 @import 'https://fonts.googleapis.com/css?family=Montserrat';
 p{
   font-family: 'Montserrat',sans-serif;
-  font-size: 30px;
+  font-size: 20px;
 }
 .header{
       border-bottom: 1px solid rgba(0,0,0,.08);
