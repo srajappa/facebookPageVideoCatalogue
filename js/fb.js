@@ -79,9 +79,9 @@ $(window).load(function(){
 
                 var rio2016 = 1102184159816462;
                 var nba = 8245623462;
+                var tasty = 1614251518827491;
 
-
-                processPageIDs(response, aToken, nba);
+                processPageIDs(response, aToken, tasty);
                 //processPageIDs(response, aToken, rio2016);
 
 
@@ -120,7 +120,7 @@ $(window).load(function(){
         // $('#allInfo').append('<div class = "row" id="addr'+(itr)+'"></div>');
 
 
-        var thingy = "<article class=\"eachContent\" id=\"video0\"><header class=\"contentHeader\"><p>"+response.data[i]["description"]+"</p></header><div class=\"videoContent\" style=\"padding-bottom: 0.907%;\"></div>"+response.data[i]["embed_html"]+"<div class=\"metaDataVideo\"><ul class=\"unOrdList\"></ul></div></article>"
+        var thingy = "<article class=\"eachContent\" id=\"video0\"><header class=\"contentHeader\"><p>"+response.data[i]["title"]+"</p></header><div class=\"videoContent\" style=\"padding-bottom: 0.907%;\"></div>"+response.data[i]["embed_html"]+"<div class=\"metaDataVideo\"><ul class=\"unOrdList\"></ul></div></article>"
         $('#video'+(itr++)).html(thingy);
         $('#spineFrame').append('<article class="eachContent" id="video'+(itr)+'"></article>');
       }
