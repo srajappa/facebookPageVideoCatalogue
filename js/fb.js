@@ -137,7 +137,7 @@ $(window).load(function(){
         if (response && !response.error) {
           /* handle the result */
           console.log("HEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
-          //console.log(JSON.stringify(response));
+          console.log(JSON.stringify(response));
           $('#basicModal').modal('hide');
           //alert("HI");
           //console.log(response.authResponse.accessToken);
