@@ -125,13 +125,13 @@ $(window).load(function(){
         $('#spineFrame').append('<article class="eachContent" id="video'+(itr)+'"></article>');
       }
     }
-
+    //&limit=200
     function processPageIDs(response,aToken, pageID){
       console.log("first : "+pageID);
       var pageVidString = '/'+pageID+'/videos';
       FB.api(pageVidString,
       'get',
-      {access_token: aToken, fields: 'description,title,created_time,length,is_instagram_eligible,place,embed_html&limit=200'},
+      {access_token: aToken, fields: 'description,title,created_time,length,is_instagram_eligible,place,embed_html'},
       function(response) {
 
         if (response && !response.error) {
