@@ -133,3 +133,8 @@ p{
   font-family: 'Montserrat',sans-serif;
   text-decoration: none;
 }
+
+a, a:visited{
+  color: #003569;
+  text-decoration: none;
+}
