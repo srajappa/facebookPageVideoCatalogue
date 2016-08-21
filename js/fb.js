@@ -6,11 +6,12 @@ $(window).load(function(){
       if($(window).scrollTop() + $(window).height() > $(document).height() - 60) {
           alert("bottom!");
           //Add the videos dynamically
-          console.log(JSON.stringify(response));
+          console.log(JSON.stringify(globalResponse));
       }
    });
 
    var itr = 0;
+   var globalResponse;
     function statusChangeCallback(response) {
       //console.log('statusChangeCallback');
       console.log(response.authResponse.accessToken);
@@ -187,7 +188,7 @@ $(window).load(function(){
 
 
           //RENDERING ON page, maybe I can call a function
-
+          globalResponse = response;
           getFrames(response);
 
         }
