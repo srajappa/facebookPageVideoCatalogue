@@ -121,10 +121,13 @@ p{
   margin-top: -5px;
   padding-top: 5px;
   margin-bottom: 7px;
+  list-style-type:none
+
 }
 
 .listValDet{
   margin-bottom: 7px;
   position: relative;
   word-wrap: break-word;
+  font-family: 'Montserrat',sans-serif;
 }

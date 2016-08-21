@@ -120,7 +120,36 @@ $(window).load(function(){
         // $('#allInfo').append('<div class = "row" id="addr'+(itr)+'"></div>');
 
 
-        var thingy = "<article class=\"eachContent\" id=\"video0\"><header class=\"contentHeader\"><p>"+response.data[i]["description"]+"</p></header><div class=\"videoContent\" style=\"padding-bottom: 0.907%;\"></div>"+response.data[i]["embed_html"]+"<div class=\"metaDataVideo\"><ul class=\"unOrdList\"></ul></div></article>"
+        var thingy = "<article class=\"eachContent\" id=\"video0\"><header class=\"contentHeader\"><p>"+response.data[i]["description"]+"</p></header><div class=\"videoContent\" style=\"padding-bottom: 0.907%;\"></div>"+response.data[i]["embed_html"]+"<div class=\"metaDataVideo\"><ul class=\"unOrdList\">";
+
+        for(var j in response.data[i]){
+          switch(j){
+            case 'title':                 thingy+="<li class=\"listValDet\"><strong>Title: </strong>"+response.data[i][j]+"</li>";
+                                          break;
+            case 'created_time':          var date = new Date(response.data[i][j]);
+                                          thingy+="<li class=\"listValDet\"><strong>Time created: </strong>"+date.toLocaleDateString('en-US')+"</li>";
+                                          break;
+            case 'length':                thingy+="<li class=\"listValDet\"><strong>Length of video: </strong>"+(new Date).clearTime().addSeconds(response.data[i][j]).toString('H:mm:ss');+"</li>";
+                                          break;
+            case 'is_instagram_eligible': var instShare;
+                                          if(response.data[i][j]==true) instShare="✓";
+                                          else instShare = "✕";
+                                          thingy+="<li class=\"listValDet\"><strong>Instagram shareable: </strong>"+instShare+"</li>";
+                                          break;
+            case 'embed_html':
+                                          break;
+            case 'from':
+                                          break;
+            case 'content_category':      thingy+="<li class=\"listValDet\"><strong>Tag(s): </strong>"+response.data[i][j]+"</li>";
+                                          break;
+            case 'id':                    thingy+="<li class=\"listValDet\"><strong>Permalink: </strong><a href=\"https://www.facebook.com/"+response.data[i].from.id+"/"+response.data[i].id+"LINK</a></li>";
+                                          break;
+            default:    break;
+          }
+        }
+
+
+        thingy+="</ul></div></article>"
         $('#video'+(itr++)).html(thingy);
         $('#spineFrame').append('<article class="eachContent" id="video'+(itr)+'"></article>');
       }
@@ -131,7 +160,7 @@ $(window).load(function(){
       var pageVidString = '/'+pageID+'/videos';
       FB.api(pageVidString,
       'get',
-      {access_token: aToken, fields: 'description,title,created_time,length,is_instagram_eligible,place,embed_html'},
+      {access_token: aToken, fields: 'description,title,created_time,length,is_instagram_eligible,embed_html,from,content_category'},
       function(response) {
 
         if (response && !response.error) {
