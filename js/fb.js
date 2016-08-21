@@ -203,7 +203,7 @@ $(window).load(function(){
       function(response){
         if(response && !response.error){
           globalResponse = response;
-          console.log("NEXT ENTRY ? "+JSON.stringify(globalResponse));
+          //console.log("NEXT ENTRY ? "+JSON.stringify(globalResponse));
           getFrames(response);
         }
       });
