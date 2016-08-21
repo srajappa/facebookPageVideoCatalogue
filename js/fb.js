@@ -200,7 +200,7 @@ $(window).load(function(){
 
     function triggerNewPages(nextPageEntries){
       FB.api(nextPageEntries,
-      function(response)){
+      function(response){
         if(response && !response.error){
           globalResponse = response;
           console.log("NEXT ENTRY ? "+JSON.stringify(globalResponse));
