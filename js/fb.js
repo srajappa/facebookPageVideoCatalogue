@@ -3,8 +3,8 @@ $(window).load(function(){
     });
 
     $(window).scroll(function() {
-      if($(window).scrollTop() + $(window).height() > $(document).height() - 100) {
-          //alert("bottom!");
+      if($(window).scrollTop() + $(window).height() > $(document).height() - 60) {
+          alert("bottom!");
           //Add the videos dynamicallys
       }
    });
