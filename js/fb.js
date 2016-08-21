@@ -191,7 +191,7 @@ $(window).load(function(){
       hours = Math.floor(seconds / 3600);
       seconds %= 3600;
       minutes = Math.floor(seconds / 60);
-      sec = seconds % 60;
+      sec = Math.floor(seconds % 60);
 
       return hours+":"+minutes+":"+sec;
     }
