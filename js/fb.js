@@ -81,7 +81,10 @@ $(window).load(function(){
                 var nba = 8245623462;
                 var tasty = 1614251518827491;
                 var withinTemptation = 7185342985;
-                processPageIDs(response, aToken, withinTemptation);
+                var coldplay = 15253175252;
+
+
+                processPageIDs(response, aToken, coldplay);
                 //processPageIDs(response, aToken, rio2016);
 
 
