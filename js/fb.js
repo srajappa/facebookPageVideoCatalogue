@@ -4,10 +4,11 @@ $(window).load(function(){
 
     $(window).scroll(function() {
       if($(window).scrollTop() + $(window).height() > $(document).height() - 60 && itr%25==0) {
-          alert("bottom!");
+          //alert("bottom!");
           //Add the videos dynamically
           //console.log(JSON.stringify(globalResponse));      //OK globalResponse has in it
           console.log("~~~~~~~~~~"+globalResponse.paging["next"]);
+          triggerNewPages(globalResponse.paging["next"]);
       }
    });
 
@@ -192,6 +193,18 @@ $(window).load(function(){
           globalResponse = response;
           getFrames(response);
 
+        }
+      });
+    }
+
+
+    function triggerNewPages(nextPageEntries){
+      FB.api(nextPageEntries,
+      function(response)){
+        if(response && !response.error){
+          globalResponse = response;
+          console.log("NEXT ENTRY ? "+JSON.stringify(globalResponse));
+          getFrames(response);
         }
       });
     }
