@@ -155,7 +155,11 @@ $(window).load(function(){
 
 
         thingy+="</ul>";
-        thingy+="<div><strong># of Likes: </strong>"+response.data[i]["likes"]["summary"]["total_count"]+"</div>";
+        thingy+="<div class=\"row\"">
+        thingy+="<div class="col-lg-4"><strong># of Likes: </strong>"+response.data[i]["likes"]["summary"]["total_count"]+"</div>";
+        thingy+="<div class="col-lg-4"><strong># of Likes: </strong>"+response.data[i]["comments"]["summary"]["total_count"]+"</div>";
+        thingy+="<div class="col-lg-4"><strong># of Likes: </strong>"+response.data[i]["reactions"]["summary"]["total_count"]+"</div>";
+        thingy+="</div>";
         thingy+="</div></article>"
         $('#video'+(itr++)).html(thingy);
         $('#spineFrame').append('<article class="eachContent" id="video'+(itr)+'"></article>');
@@ -164,7 +168,7 @@ $(window).load(function(){
     //&limit=200
     function processPageIDs(response,aToken, pageID){
       console.log("first : "+pageID);
-      var pageVidString = '/'+pageID+'/videos?fields=created_time,title,description,length,is_instagram_eligible,embed_html,from,content_category,likes.summary(true).limit(0)';
+      var pageVidString = '/'+pageID+'/videos?fields=created_time,title,description,length,is_instagram_eligible,embed_html,from,content_category,likes.summary(true).limit(0),comments.summary(true).limit(0),reactions.summary(true).limit(0)';
       FB.api(pageVidString,
       // 'get',
       // {access_token: aToken, fields: 'created_time,title,description,length,is_instagram_eligible,embed_html,from,content_category'},
