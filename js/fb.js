@@ -132,7 +132,7 @@ $(window).load(function(){
             case 'created_time':          var date = new Date(response.data[i][j]);
                                           thingy+="<li class=\"listValDet\"><strong>Published On: </strong>"+date.toLocaleDateString('en-US')+"</li>";
                                           break;
-            case 'length':                thingy+="<li class=\"listValDet\"><strong>Length of video: </strong>"+response.data[i]["length"]+" seconds </li>";
+            case 'length':                thingy+="<li class=\"listValDet\"><strong>Length of video: </strong>"+converToHMS(response.data[i]["length"])+" seconds </li>";
                                           //(new Date).clearTime().addSeconds(response.data[i][j]).toString('H:mm:ss')
                                           break;
             case 'is_instagram_eligible': var instShare;
@@ -187,6 +187,14 @@ $(window).load(function(){
       });
     }
 
+    funtion converToHMS(seconds){
+      hours = Math.floor(seconds / 3600);
+      seconds %= 3600;
+      minutes = Math.floor(seconds / 60);
+      sec = totalSeconds % 60;
+
+      return hours+":"+minutes+":"+sec;
+    }
 
 
 
