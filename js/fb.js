@@ -155,7 +155,7 @@ $(window).load(function(){
 
 
         thingy+="</ul>";
-        thingy+="<div class=\"row\"">
+        thingy+="<div class=\"row\">";
         thingy+="<div class="col-lg-4"><strong># of Likes: </strong>"+response.data[i]["likes"]["summary"]["total_count"]+"</div>";
         thingy+="<div class="col-lg-4"><strong># of Likes: </strong>"+response.data[i]["comments"]["summary"]["total_count"]+"</div>";
         thingy+="<div class="col-lg-4"><strong># of Likes: </strong>"+response.data[i]["reactions"]["summary"]["total_count"]+"</div>";
