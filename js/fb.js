@@ -5,13 +5,14 @@ $(window).load(function(){
     $(window).scroll(function() {
       if($(window).scrollTop() + $(window).height() > $(document).height() - 60) {
           alert("bottom!");
-          //Add the videos dynamicallys
+          //Add the videos dynamically
+          console.log(JSON.stringify(response));
       }
    });
 
    var itr = 0;
     function statusChangeCallback(response) {
-      console.log('statusChangeCallback');
+      //console.log('statusChangeCallback');
       console.log(response.authResponse.accessToken);
       // The response object is returned with a status field that lets the
       // app know the current login status of the person.
@@ -167,7 +168,7 @@ $(window).load(function(){
     }
     //&limit=200
     function processPageIDs(response,aToken, pageID){
-      console.log("first : "+pageID);
+      //console.log("first : "+pageID);
       var pageVidString = '/'+pageID+'/videos?fields=created_time,title,description,length,is_instagram_eligible,embed_html,from,content_category,likes.summary(true).limit(0),comments.summary(true).limit(0),reactions.summary(true).limit(0)';
       FB.api(pageVidString,
       // 'get',
@@ -176,13 +177,13 @@ $(window).load(function(){
 
         if (response && !response.error) {
           /* handle the result */
-          console.log("HEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
-          console.log(JSON.stringify(response));
+        //  console.log("HEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
+          //console.log(JSON.stringify(response));
           $('#basicModal').modal('hide');
           //alert("HI");
           //console.log(response.authResponse.accessToken);
 
-          console.log(response.data[0].title +"-------------- here is one data");
+          //console.log(response.data[0].title +"-------------- here is one data");
 
 
           //RENDERING ON page, maybe I can call a function
