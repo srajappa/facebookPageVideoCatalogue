@@ -16,7 +16,7 @@ $(window).load(function(){
    var globalResponse;
     function statusChangeCallback(response) {
       //console.log('statusChangeCallback');
-      console.log(response.authResponse.accessToken);
+      //console.log(response.authResponse.accessToken);
       // The response object is returned with a status field that lets the
       // app know the current login status of the person.
       // Full docs on the response object can be found in the documentation
