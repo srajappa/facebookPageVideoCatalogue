@@ -154,10 +154,10 @@ $(window).load(function(){
         }
 
 
-        thingy+="</ul></div>"
-        thingy+="<p><strong># of Likes: </strong>"+response.data[i]["likes"]["summary"]["total_count"]+"</p>";
-        thingy+="<p><strong># of Comments: </strong>"+response.data[i]["comments"]["summary"]["total_count"]+"</p>";
-        thingy+="<p><strong># of Comments: </strong>"+response.data[i]["reactions"]["summary"]["total_count"]+"</p></article>";
+        thingy+="</ul></div></article>"
+        // thingy+="<p><strong># of Likes: </strong>"+response.data[i]["likes"]["summary"]["total_count"]+"</p>";
+        // thingy+="<p><strong># of Comments: </strong>"+response.data[i]["comments"]["summary"]["total_count"]+"</p>";
+        // thingy+="<p><strong># of Comments: </strong>"+response.data[i]["reactions"]["summary"]["total_count"]+"</p></article>";
 
         $('#video'+(itr++)).html(thingy);
         $('#spineFrame').append('<article class="eachContent" id="video'+(itr)+'"></article>');
