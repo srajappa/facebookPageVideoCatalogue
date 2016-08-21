@@ -120,7 +120,7 @@ $(window).load(function(){
         // $('#allInfo').append('<div class = "row" id="addr'+(itr)+'"></div>');
 
 
-        var thingy = "<article class=\"eachContent\" id=\"video0\"><header class=\"contentHeader\"><p>"+response.data[i]["description"]+"</p></header><div class=\"videoContent\" style=\"padding-bottom: 0.907%;\"></div>"+response.data[i]["embed_html"]+"<div class=\"metaDataVideo\"><ul class=\"unOrdList\">";
+        var thingy = "<article class=\"eachContent\" id=\"video0\"><header class=\"contentHeader\"><p><a href=\"https://www.facebook.com/"+response.data[i].from.id+"\" target=\"_blank\">"+response.data[i].from.name+"</a></p></header><div class=\"videoContent\" style=\"padding-bottom: 0.907%;\"></div>"+response.data[i]["embed_html"]+"<div class=\"metaDataVideo\"><ul class=\"unOrdList\">";
 
         for(var j in response.data[i]){
           switch(j){
