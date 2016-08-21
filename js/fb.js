@@ -7,7 +7,7 @@ $(window).load(function(){
           alert("bottom!");
           //Add the videos dynamically
           //console.log(JSON.stringify(globalResponse));      //OK globalResponse has in it
-          console.log("~~~~~~~~~~"+globalResponse.next);
+          console.log("~~~~~~~~~~"+globalResponse["next"]);
       }
    });
 
