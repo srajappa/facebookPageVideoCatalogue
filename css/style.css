@@ -64,6 +64,7 @@ p{
   margin-left: -1px;
   margin-right: -1px;
   margin-bottom: 60px;
+  text-decoration: none;
 }
 /*We can have information and date published information about the content*/
 .contentHeader{
@@ -130,4 +131,5 @@ p{
   position: relative;
   word-wrap: break-word;
   font-family: 'Montserrat',sans-serif;
+  text-decoration: none;
 }

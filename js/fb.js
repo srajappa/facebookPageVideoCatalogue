@@ -145,6 +145,7 @@ $(window).load(function(){
                                           break;
             case 'id':                    thingy+="<li class=\"listValDet\"><strong>Permalink: </strong><a href=\"https://www.facebook.com/"+response.data[i].from.id+"/"+response.data[i].id+"\" target=\"_blank\">LINK</a></li>";
                                           break;
+            case 'description':           thingy+="<li class=\"listValDet\"><strong>Description: </strong>"+response.data[i][j]+"</li>";
             default:    break;
           }
         }
@@ -161,7 +162,7 @@ $(window).load(function(){
       var pageVidString = '/'+pageID+'/videos';
       FB.api(pageVidString,
       'get',
-      {access_token: aToken, fields: 'description,title,created_time,length,is_instagram_eligible,embed_html,from,content_category'},
+      {access_token: aToken, fields: 'created_time,title,description,length,is_instagram_eligible,embed_html,from,content_category'},
       function(response) {
 
         if (response && !response.error) {
