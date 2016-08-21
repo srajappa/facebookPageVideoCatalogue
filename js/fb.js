@@ -84,7 +84,7 @@ $(window).load(function(){
                 var coldplay = 15253175252;
 
 
-                processPageIDs(response, aToken, nba);
+                processPageIDs(response, aToken, coldplay);
                 //processPageIDs(response, aToken, rio2016);
 
 
@@ -123,7 +123,7 @@ $(window).load(function(){
         // $('#allInfo').append('<div class = "row" id="addr'+(itr)+'"></div>');
 
 
-        var thingy = "<article class=\"eachContent\" id=\"video"+(itr)+"\"><header class=\"contentHeader\"><p><a href=\"https://www.facebook.com/"+response.data[i].from.id+"\" target=\"_blank\">"+response.data[i].from.name+"</a></p></header><div class=\"videoContent\" style=\"padding-bottom: 0.907%;\"></div>"+response.data[i]["embed_html"]+"<div class=\"metaDataVideo\"><ul class=\"unOrdList\">";
+        var thingy = "<article class=\"eachContent\" id=\"video0\"><header class=\"contentHeader\"><p><a href=\"https://www.facebook.com/"+response.data[i].from.id+"\" target=\"_blank\">"+response.data[i].from.name+"</a></p></header><div class=\"videoContent\" style=\"padding-bottom: 0.907%;\"></div>"+response.data[i]["embed_html"]+"<div class=\"metaDataVideo\"><ul class=\"unOrdList\">";
 
         for(var j in response.data[i]){
           switch(j){
@@ -155,10 +155,6 @@ $(window).load(function(){
 
 
         thingy+="</ul></div></article>"
-        // thingy+="<p><strong># of Likes: </strong>"+response.data[i]["likes"]["summary"]["total_count"]+"</p>";
-        // thingy+="<p><strong># of Comments: </strong>"+response.data[i]["comments"]["summary"]["total_count"]+"</p>";
-        // thingy+="<p><strong># of Comments: </strong>"+response.data[i]["reactions"]["summary"]["total_count"]+"</p></article>";
-
         $('#video'+(itr++)).html(thingy);
         $('#spineFrame').append('<article class="eachContent" id="video'+(itr)+'"></article>');
       }
@@ -169,7 +165,7 @@ $(window).load(function(){
       var pageVidString = '/'+pageID+'/videos';
       FB.api(pageVidString,
       'get',
-      {access_token: aToken, fields: 'created_time,title,description,length,is_instagram_eligible,embed_html,from,content_category,likes.summary=true,comments.summary=true,reactions.summary=true'},
+      {access_token: aToken, fields: 'created_time,title,description,length,is_instagram_eligible,embed_html,from,content_category'},
       function(response) {
 
         if (response && !response.error) {
