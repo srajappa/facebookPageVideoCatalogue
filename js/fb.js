@@ -6,8 +6,8 @@ $(window).load(function(){
       if($(window).scrollTop() + $(window).height() > $(document).height() - 60 && itr%25==0) {
           alert("bottom!");
           //Add the videos dynamically
-          //console.log(JSON.stringify(globalResponse));      //OK globalResponse has in it
-          console.log("~~~~~~~~~~"+globalResponse["next"]);
+          console.log(JSON.stringify(globalResponse));      //OK globalResponse has in it
+          //console.log("~~~~~~~~~~"+globalResponse["next"]);
       }
    });
 
