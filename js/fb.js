@@ -169,7 +169,7 @@ $(window).load(function(){
       var pageVidString = '/'+pageID+'/videos';
       FB.api(pageVidString,
       'get',
-      {access_token: aToken, fields: 'created_time,title,description,length,is_instagram_eligible,embed_html,from,content_category,likes.summary(true),comments.summary(true),reactions.summary(true)'},
+      {access_token: aToken, fields: 'created_time,title,description,length,is_instagram_eligible,embed_html,from,content_category,likes.summary=true,comments.summary=true,reactions.summary=true'},
       function(response) {
 
         if (response && !response.error) {
