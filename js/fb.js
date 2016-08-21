@@ -84,7 +84,7 @@ $(window).load(function(){
                 var coldplay = 15253175252;
 
 
-                processPageIDs(response, aToken, rio2016);
+                processPageIDs(response, aToken, nba);
                 //processPageIDs(response, aToken, rio2016);
 
 
