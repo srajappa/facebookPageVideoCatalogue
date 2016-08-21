@@ -198,10 +198,10 @@ $(window).load(function(){
         if(minutes==0)
           return sec+" seconds";
         else {
-          return minutes+" minutes and"+sec+" seconds";
+          return minutes+" minutes and "+sec+" seconds";
         }
       }
-      return hours+" hours"+minutes+" minutes and"+sec+" seconds";
+      return hours+" hours "+minutes+" minutes and "+sec+" seconds";
     }
 
 
