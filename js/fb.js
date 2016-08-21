@@ -129,7 +129,7 @@ $(window).load(function(){
             case 'created_time':          var date = new Date(response.data[i][j]);
                                           thingy+="<li class=\"listValDet\"><strong>Time created: </strong>"+date.toLocaleDateString('en-US')+"</li>";
                                           break;
-            case 'length':                thingy+="<li class=\"listValDet\"><strong>Length of video: </strong>"+(new Date).clearTime().addSeconds(response.data[i][j]).toString('H:mm:ss');+"</li>";
+            case 'length':                thingy+="<li class=\"listValDet\"><strong>Length of video: </strong>"+(new Date).clearTime().addSeconds(response.data[i][j]).toString('H:mm:ss')+"</li>";
                                           break;
             case 'is_instagram_eligible': var instShare;
                                           if(response.data[i][j]==true) instShare="✓";
