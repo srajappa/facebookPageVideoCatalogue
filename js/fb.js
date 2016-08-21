@@ -127,7 +127,7 @@ $(window).load(function(){
             case 'title':                 thingy+="<li class=\"listValDet\"><strong>Title: </strong>"+response.data[i][j]+"</li>";
                                           break;
             case 'created_time':          var date = new Date(response.data[i][j]);
-                                          thingy+="<li class=\"listValDet\"><strong>Time created: </strong>"+date.toLocaleDateString('en-US')+"</li>";
+                                          thingy+="<li class=\"listValDet\"><strong>Published On: </strong>"+date.toLocaleDateString('en-US')+"</li>";
                                           break;
             case 'length':                thingy+="<li class=\"listValDet\"><strong>Length of video: </strong>"+response.data[i]["length"]+" seconds </li>";
                                           //(new Date).clearTime().addSeconds(response.data[i][j]).toString('H:mm:ss')
@@ -143,7 +143,7 @@ $(window).load(function(){
                                           break;
             case 'content_category':      thingy+="<li class=\"listValDet\"><strong>Tag(s): </strong>"+response.data[i][j]+"</li>";
                                           break;
-            case 'id':                    thingy+="<li class=\"listValDet\"><strong>Permalink: </strong><a href=\"https://www.facebook.com/"+response.data[i].from.id+"/"+response.data[i].id+"LINK</a></li>";
+            case 'id':                    thingy+="<li class=\"listValDet\"><strong>Permalink: </strong><a href=\"https://www.facebook.com/"+response.data[i].from.id+"/"+response.data[i].id+"\">LINK</a></li>";
                                           break;
             default:    break;
           }
