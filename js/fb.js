@@ -80,8 +80,8 @@ $(window).load(function(){
                 var rio2016 = 1102184159816462;
                 var nba = 8245623462;
                 var tasty = 1614251518827491;
-
-                processPageIDs(response, aToken, tasty);
+                var withinTemptation = 7185342985;
+                processPageIDs(response, aToken, withinTemptation);
                 //processPageIDs(response, aToken, rio2016);
 
 
@@ -143,7 +143,7 @@ $(window).load(function(){
                                           break;
             case 'content_category':      thingy+="<li class=\"listValDet\"><strong>Tag(s): </strong>"+response.data[i][j]+"</li>";
                                           break;
-            case 'id':                    thingy+="<li class=\"listValDet\"><strong>Permalink: </strong><a href=\"https://www.facebook.com/"+response.data[i].from.id+"/"+response.data[i].id+"\">LINK</a></li>";
+            case 'id':                    thingy+="<li class=\"listValDet\"><strong>Permalink: </strong><a href=\"https://www.facebook.com/"+response.data[i].from.id+"/"+response.data[i].id+"\" target=\"_blank\">LINK</a></li>";
                                           break;
             default:    break;
           }
