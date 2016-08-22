@@ -5,7 +5,8 @@ $(window).load(function(){
 //SCROLL Event triggers request of next 25 records. triggerNewPages helps rended new set when mouse reaches the bottom of the window frame.
 $(window).scroll(function() {
   if($(window).scrollTop() + $(window).height() > $(document).height() - 60 && itr%25==0) {
-    triggerNewPages(globalResponse.paging["next"]);
+    if (response.paging && response.paging.next)
+      triggerNewPages(globalResponse.paging["next"]);
   }
 });
 var itr = 0;
