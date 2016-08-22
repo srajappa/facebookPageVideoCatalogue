@@ -89,7 +89,7 @@ function getFrames(response){
   for(var i = 0; i<response.data.length; i++){
     //Adding the information here
     //CREATE Seprate strings and then combine them to .html class
-    console.log(response.data[i]["embed_html"]);
+    //console.log(response.data[i]["embed_html"]);
 
     var thingy = "<article class=\"eachContent\" id=\"video0\"><header class=\"contentHeader\"><p><a href=\"https://www.facebook.com/"+response.data[i].from.id+"\" target=\"_blank\">"+response.data[i].from.name+"</a></p></header><div class=\"videoContent\" style=\"padding-bottom: 0.907%;\"><div class=\"actualVideo\">"+response.data[i]["embed_html"]+"</div></div><div class=\"metaDataVideo\"><ul class=\"unOrdList\">";
 
