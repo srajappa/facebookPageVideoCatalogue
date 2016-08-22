@@ -1,9 +1,0 @@
-1. PAGE-VIDEOS received!
-2. Isolate the details [iframe] for each video
-3. Feed it into the page.
-
-
-
-HTML related:
-1. Create a master-div.
-2. Have bootstrap modules for the video and the information
